@@ -4,6 +4,9 @@
         <h1>KnowledgeShare</h1>
     </HEAD>
     <BODY>
+        <h3>{{ auth.author_name }}</h3>
+        {{ auth.email }}
+        <br><br>
         <h3>Article successfully deleted</h3>
         <button type="button" onclick="location.href='/new_article/';">Add more article</button><br>
         <button type="button" onclick="location.href='/view_article/';">View articles</button><br><br><br>
