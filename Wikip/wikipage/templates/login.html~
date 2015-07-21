@@ -1,0 +1,15 @@
+<HTML>
+    <HEAD>
+        <title>KnowledgeShare</title>
+        <h1>KnowledgeShare</h1>
+        <h2>Existing User - Sign In</h2>
+    </HEAD>
+    <BODY>
+        <form action = "/new_session/" method="POST">{% csrf_token %}
+            <p>Name:  <input type="text" name="name"></p>
+            <p>Email:  <input type="text" name="email"></p>
+            <p>Password:  <input type="text" name="password"></p>
+            <input type="submit" value="Submit">
+        </form>
+    </BODY>
+</HTML>

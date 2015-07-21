@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>View Articles!</title>
+</head>
+    <h1>KnowledgeShare</h1>
+    <body>
+	{% if article_list %}	
+	<ul>
+		{% for article in article_list %}
+			<li>{{ article.article_title}}:
+			{{ article.article_content }}</li>
+			<br>
+		{% endfor %}
+	</ul>
+	{% else %}
+	<p>The list is empty</p>
+	{% endif %}
+    </body>
+</html>

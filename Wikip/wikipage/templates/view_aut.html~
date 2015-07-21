@@ -1,0 +1,26 @@
+<HTML>
+    <HEAD>
+        <title>KnowledgeShare</title>
+        <h1>WELCOME TO KnowledgeShare</h1>
+    </HEAD>
+    <BODY>
+        <h3>{{ auth.author_name }}</h3>
+        {{ auth.email }}
+        {% if article_list %}
+        <ul>
+            {% for article in article_list %}
+                <li>{{ article.title}} (published on {{ article.pub_date }}):<br>
+                    {{ article.content }}<br>
+
+                    <button type="button" onclick='location.href="/edit_article/{{article.article_id}}/"'>Edit article</button><br>
+                    <button type="button" onclick='location.href="/delete_article/{{article.article_id}}/"'>Delete article</a><br>
+                </li><br>
+            {% endfor %}</ul>
+        {% else %}
+            <p>The list is empty</p>
+        {% endif %}
+        <button type="button" onclick="location.href='/new_article/';">Add more articles</button><br><br><br>
+        <button type="button" onclick="location.href='/logout/';">Logout</button>
+    </BODY>
+</HTML>
+

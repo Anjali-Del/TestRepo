@@ -1,0 +1,19 @@
+<HTML>
+    <HEAD>
+        <title>KnowledgeShare</title>
+        <h1>KnowledgeShare</h1>
+        <h2>Existing user - Add new article</h2>
+    </HEAD>
+    <BODY>
+        {{ author.author_name }}<br>
+        {{ author.email }}
+        <form action = "/success_page/" method="POST">{% csrf_token %}
+            <p>Title:  <input type="text" name="title"></p>
+            <p>Content:  <input type="text" name="content"></p>
+            <input type="submit" value="Submit">
+        </form>
+    </BODY>
+    <br>
+    <br>
+    <button type="button" onclick ="location.href='/logout/'">Logout</button>
+</HTML>

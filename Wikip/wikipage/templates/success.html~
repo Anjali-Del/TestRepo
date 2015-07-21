@@ -1,0 +1,16 @@
+<HTML>
+    <HEAD>
+        <title>KnowledgeShare</title>
+        <h1>KnowledgeShare</h1>
+    </HEAD>
+    <BODY>
+        <h3>{{ art.author_name }}</h3>
+        {{ author.email }}<br>
+        <button type="button" onclick="location.href='/new_article/';">Add Article</button><br>
+        <button type="button" onclick="location.href='/view_article/';">View Articles</button><br><br><br>
+        <button type="button" onclick="location.href='/logout/';">Logout</button>
+        <h4>Congratulations! Your article has been added.</h4>
+        
+    </BODY>
+</HTML>
+

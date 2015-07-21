@@ -1,0 +1,22 @@
+<HTML>
+    <HEAD>
+        <title>KnowledgeShare</title>
+        <h1>WELCOME TO KnowledgeShare</h1>
+    </HEAD>
+    <BODY>
+        {% if article_list %}
+        <ul>
+            {% for article in article_list %}
+                <li>{{ article.title}}<br>
+                    (published on {{ article.pub_date }}) by {{ article.uid.author_name }}<br>
+                    {{ article.content }}
+                </li><br>
+            {% endfor %}</ul>
+        {% else %}
+            <p>The list is empty</p>
+        {% endif %}
+
+        <button type="button" onclick="location.href='/homepage/';">Back to Homepage</button><br><br><br>
+    </BODY>
+</HTML>
+

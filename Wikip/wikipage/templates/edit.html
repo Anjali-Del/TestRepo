@@ -1,0 +1,23 @@
+<HTML>
+    <HEAD>
+        <title>KnowledgeShare</title>
+        <h1>KnowledgeShare</h1>
+    </HEAD>
+    <BODY>
+        <h3>{{ auth.author_name }}</h3>
+        {{ auth.email }}
+        <br><br>
+        {{article.title}}<br>
+        {{article.content}}<br><br>
+        <form action ="/success_edit/{{article.article_id}}/" method="POST">{% csrf_token %}
+            <p>Title:  <input type="text" name="title"></p>
+            <p>Content:  <input type="text" name="content"></p>
+            <input type="submit" value="Update">
+        </form>
+
+        <button type="button" onclick="location.href='/new_article/';">Add more articles</button><br>
+        <button type="button" onclick="location.href='/view_article/';">View articles</button><br><br><br>
+        <button type="button" onclick="location.href='/logout/';">Logout</button>
+    </BODY>
+</HTML>
+
