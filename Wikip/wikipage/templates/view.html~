@@ -1,22 +1,36 @@
 <HTML>
-    <HEAD>
+    <HEAD lang="en">
         <title>KnowledgeShare</title>
         <h1>WELCOME TO KnowledgeShare</h1>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     </HEAD>
     <BODY>
-        {% if article_list %}
+        <div class="panel-group" id="accordion">
         <ul>
             {% for article in article_list %}
-                <li>{{ article.title}}<br>
-                    (published on {{ article.pub_date }}) by {{ article.uid.author_name }}<br>
+                <div class="panel panel-default">
+                <div class="panel-heading">
+                <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-{{forloop.counter}}">
+                {{ article.title }}<br>
+                (Last edited {{ article.pub_date }}) by {{ article.uid.author_name }}
+                </a>
+                </h4>
+                </div>
+                <div id="collapse-{{forloop.counter}}" class="panel-collapse collapse">
+                <div class="panel-body">
                     {{ article.content }}
-                </li><br>
+                </div>
+                </div>
+            </div>
             {% endfor %}</ul>
+            </div>
         {% else %}
-            <p>The list is empty</p>
-        {% endif %}
-
         <button type="button" onclick="location.href='/homepage/';">Back to Homepage</button><br><br><br>
     </BODY>
 </HTML>
+
 

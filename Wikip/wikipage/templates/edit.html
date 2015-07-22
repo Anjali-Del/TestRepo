@@ -7,11 +7,10 @@
         <h3>{{ auth.author_name }}</h3>
         {{ auth.email }}
         <br><br>
-        {{article.title}}<br>
-        {{article.content}}<br><br>
+
         <form action ="/success_edit/{{article.article_id}}/" method="POST">{% csrf_token %}
-            <p>Title:  <input type="text" name="title"></p>
-            <p>Content:  <input type="text" name="content"></p>
+            <p>Title:  <input type="text" name="title" value="{{article.title}}"></p>
+            <p>Content:  <input type="text" name="content" value="{{article.content}}"></p>
             <input type="submit" value="Update">
         </form>
 
